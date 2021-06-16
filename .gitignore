@@ -284,3 +284,7 @@ fabric.properties
 .DS_Store
 .DS_Store
 final_template.zip
+
+#Debugging stuff
+debug.log
+info.log

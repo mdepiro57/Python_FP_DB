@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<!-- course_list_bootstrap.html -->
 <html lang="en">
 <head>
     {% load static %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="max-age: 0, no-store">
     <title>Online Courses</title>
 </head>
 <body>
@@ -48,11 +50,15 @@
                               <h5 class="card-title">{{ course.name }}, <span class="text-success">
                                   {{ course.total_enrollment}} enrolled</span></h5>
                             <p class="card-text">{{ course.description}}</p>
+                            {% if user.is_authenticated %}
                             <form action="{% url 'onlinecourse:enroll' course.id %}" method="post">
                                   {% csrf_token %}
                                   <input class="btn btn-primary"  type="submit"
                                          value="{% if course.is_enrolled %}Enter{% else %}Enroll{% endif %} ">
                             </form>
+                            {% else %}
+                            <div class="alert alert-info alert-dismissible fade show" role="alert">Please login to see details/enroll</div>
+                            {% endif %}
                           </div>
                         </div>
                 {% endfor %}
