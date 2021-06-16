@@ -1,0 +1,3 @@
+insert into onlinecourse_course values
+(1,'Introduction to Django','course_images/django.png','Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It''s free and open source.','2020-12-09',0),
+(2,'Introduction to Python','course_images/python.png','Python is an interpreted, high-level and general-purpose programming language. Python''s design philosophy emphasizes code readability with its notable use of significant whitespace.','2020-12-09',0);
