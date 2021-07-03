@@ -27,7 +27,7 @@ SECRET_KEY = 'aay0j_9b&ky3a7(8m8il+-1ud(scw12@w5!+5-=gsk6ynzi0ls'
 DEBUG = True
 
 # <HINT> add your cloud host here
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mdepiro57.us-south.cf.appdomain.cloud']
 
 
 # Application definition
@@ -39,11 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar',
+    #'debug_toolbar',
 ]
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -131,26 +131,26 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'INFO': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': 'info.log',
-        },
-        'DEBUG': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': 'debug.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['DEBUG','INFO'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
+#LOGGING = {
+#    'version': 1,
+#    'disable_existing_loggers': False,
+#    'handlers': {
+#        'INFO': {
+#            'level': 'INFO',
+#            'class': 'logging.FileHandler',
+#            'filename': 'info.log',
+#        },
+#        'DEBUG': {
+#            'level': 'DEBUG',
+#            'class': 'logging.FileHandler',
+#            'filename': 'debug.log',
+#        },
+#    },
+#    'loggers': {
+#        'django': {
+#            'handlers': ['DEBUG','INFO'],
+#            'level': 'DEBUG',
+#            'propagate': True,
+#        },
+#    },
+#}
