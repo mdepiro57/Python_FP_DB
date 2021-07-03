@@ -111,6 +111,7 @@ class Question(models.Model):
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     question_text = models.CharField(max_length=256, default = "<Your question here>")
     grade = models.IntegerField(default = 0)
+    course = models.ManyToManyField(Course)
 
     # <HINT> A sample model method to calculate if learner get the score of the question
     def is_get_score(self, selected_ids):
