@@ -1,9 +1,6 @@
 from django.contrib import admin
 # <HINT> Import any new Models here
 from .models import Course, Lesson, Instructor, Learner, Question, Choice, Enrollment, Submission
-import logging
-logger = logging.getLogger('django')
-logger.debug(__file__ + ' @6')
 #print("look what I found")      #prints in the runserver window
 
 # <HINT> Register QuestionInline and ChoiceInline classes here
@@ -39,7 +36,6 @@ class CourseAdmin(admin.ModelAdmin):
 class LessonAdmin(admin.ModelAdmin):
     model = Lesson
     inlines = [QuestionInline]
-    #logger.info(__file__ + ' ' + str(Course.name))
     list_display = ['title',Course,'order']
     ordering = ['course_id','order']
     list_filter = ['title']
@@ -49,7 +45,6 @@ class LessonAdmin(admin.ModelAdmin):
             queryset, may_have_duplicates = super().get_search_results(
                 request, queryset, search_term,
             )
-            logger.debug(__file__ + ' @47')
             try:
                 search_term_as_str = search_term
             except ValueError:
